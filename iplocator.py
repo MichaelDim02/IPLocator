@@ -10,6 +10,7 @@ try:
 	import pygeoip
 except ImportError:
 	print("[!] Could not run IPlocator. Please make sure you run the requirments.py script first.")
+	exit()
 	
 
 def banner():
