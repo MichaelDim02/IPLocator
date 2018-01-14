@@ -4,9 +4,13 @@
 #     THESSALONIKI GREECE 2017      #
 #####################################
 from __future__ import print_function
-import pygeoip
 import argparse
 import socket
+try:
+	import pygeoip
+except ImportError:
+	print("[!] Could not run IPlocator. Please make sure you run the requirments.py script first.")
+	
 
 def banner():
 	print("IP LOCATOR v0.1")
