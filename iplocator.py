@@ -1,5 +1,5 @@
 #####################################
-#          IP LOCATOR v0.1          #  
+#          IP LOCATOR v0.5          #  
 # BY MICHAEL CONSTANTINE DIMOPOULOS #
 #     THESSALONIKI GREECE 2017      #
 #####################################
@@ -14,7 +14,7 @@ except ImportError:
 	
 
 def banner():
-	print("IP LOCATOR v0.1")
+	print("IP LOCATOR v0.5")
 	print("IP Tracing tool by Michael C. Dimopoulos. Thessaloniki, Greece 2018")
 	print("Usage: python iplocator -u [URL] / -a [IP]")
 def lookup(ip):
