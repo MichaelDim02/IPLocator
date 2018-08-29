@@ -1,5 +1,5 @@
 #####################################
-#          IP LOCATOR v0.5          #  
+#          IP LOCATOR v0.6          #  
 # BY MICHAEL CONSTANTINE DIMOPOULOS #
 #     THESSALONIKI GREECE 2017      #
 #####################################
@@ -14,29 +14,31 @@ except ImportError:
 	
 
 def banner():
-	print("IP LOCATOR v0.5")
-	print("IP Tracing tool by Michael C. Dimopoulos. Thessaloniki, Greece 2018")
+	print(".: IP LOCATOR v0.6 :.")
+	print("IP Tracing tool by Michael C. Dim. // Thessaloniki, Greece 2018")
 	print("Usage: python iplocator -u [URL] / -a [IP]")
 def lookup(ip):
 	print("IP:", ip)
 	db = pygeoip.GeoIP("GeoLiteCity.dat")
 	geo_data = db.record_by_name(ip)
-	print("Country: " + str(geo_data["country_name"]))
-	print("City: " + str(geo_data["city"]))
-	print("Longitude: " + str(geo_data["longitude"]))
-	print("Latitude: " + str(geo_data["latitude"]))
+	print("Country: " + geo_data["country_name"].encode("utf-8"))
+	if geo_data["city"]:
+		print("City: " + geo_data["city"].encode("utf-8"))
+	print("Longitude: " + str(geo_data["longitude"]).encode("utf-8"))
+	print("Latitude: " + str(geo_data["latitude"]).encode("utf-8"))
 	s = raw_input("\nDo you want to save the data in a .txt file? [Y/n]: ")
 	if s == "n" or s == "N" or s == "no" or s == "No" or s == "NO":
 		exit()
 	else:
 		f = open(str(ip) ,'w+')
-		c1 = "Country: " + str(geo_data["country_name"]) + "\n"
+		c1 = "Country: " + geo_data["country_name"].encode("utf-8") + "\n"
 		f.write(str(c1))
-		c2 = "City: " + str(geo_data["city"]) + "\n"
-		f.write(str(c2))
-		l1 = "Longitude: " + str(geo_data["longitude"]) + "\n"
+		if geo_data["city"]:
+			c2 = "City: " + geo_data["city"].encode("utf-8") + "\n"
+			f.write(str(c2))
+		l1 = "Longitude: " + str(geo_data["longitude"]).encode("utf-8") + "\n"
 		f.write(str(l1))
-		l2 = "Latitude: " + str(geo_data["latitude"]) +"\n"
+		l2 = "Latitude: " + str(geo_data["latitude"]).encode("utf-8") +"\n"
 		f.write(str(l2))
 		f.close()
 	
@@ -64,4 +66,3 @@ def arguments():
 	if not ip and not url:
 		banner()
 arguments()
-
