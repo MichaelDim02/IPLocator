@@ -5,7 +5,7 @@ IP Locator is a simple tool that allows you to find the geolocation of a device 
 Run the following command for full installation:
 
 ```
-sudo git clone https://github.com/MichaelDim02/iplocator.git && cd iplocator/ && chmod +x ipl.sh && cp ipl.sh /bin/ipl
+git clone https://github.com/MichaelDim02/iplocator.git && cd iplocator/ && chmod +x ipl.sh && sudo cp ipl.sh /bin/ipl
 ```
 
 ## Usage
