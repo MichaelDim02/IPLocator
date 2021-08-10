@@ -1,5 +1,5 @@
 # IPLocator
-IP Locator is a simple tool that allows you to find the geolocation of a device using ipinfo.io.
+IP Locator is a simple one-liner tool that allows you to find the geolocation of a device using ipinfo.io and curl.
 
 ## Installation
 Run the following command for full installation:
