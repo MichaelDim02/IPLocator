@@ -10,7 +10,7 @@ git clone https://github.com/MichaelDim02/iplocator.git && cd iplocator/ && chmo
 
 ## Usage
 ```
-prompt$> ipl 142.250.181.238
+$ ipl 142.250.181.238
   ip: 142.250.181.238,
   hostname: fra16s56-in-f14.1e100.net,
   city: Mountain View,
@@ -21,5 +21,5 @@ prompt$> ipl 142.250.181.238
   postal: 94043,
   timezone: America/Los_Angeles,
   readme: https://ipinfo.io/missingauth
-prompt$>
+$
 ```
